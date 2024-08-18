@@ -48,7 +48,7 @@
 	}
 
         .container {
-            width: calc(80vw-15vw); /* 화면 너비의 80%로 설정 */
+            width: 80vw; /* 화면 너비의 80%로 설정 */
             max-width: 1200px; /* 최대 너비를 1200px로 설정 */
             padding: 20px;
             background-color: #ffffff;
@@ -117,9 +117,7 @@
         .vertical-menu a:hover {
             color: white;
         }
-	ul div li a{
-		padding: 0 0 60px 0;
-	}
+
 	    
     </style>
 </head>
@@ -129,7 +127,7 @@
 <body>
 	<!-- 수직 메뉴 바 -->
     	<ul class="vertical-menu">
-		<div class="centered">
+		<div class="centered" style= "padding: 0 0 60px 0;">
         	<li><a href="/main/">Home</a></li>
         	<li><a href="/main/profile/">About</a></li>
         	<li><a href="#services">Services</a></li>
