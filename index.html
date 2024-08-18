@@ -13,28 +13,34 @@
         /* 전체 페이지 설정 */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Lora, sans-serif;
             background-color: #f0f0f0;
             height: 100vh;
             overflow: hidden;
             display: flex;
         }
 
+        /* 햄버거 아이콘 스타일 */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
         /* 수직 메뉴 바 스타일 */
         .vertical-menu {
+            display: none; /* 초기에는 숨겨진 상태 */
             width: 200px;
             background-color: #333;
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
             list-style-type: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
+            top: 60px;
+            right: 20px;
             z-index: 1000;
         }
 
@@ -43,29 +49,36 @@
             text-decoration: none;
             color: white;
             display: block;
-            text-align: center;
+            text-align: left;
         }
 
         .vertical-menu a:hover {
             background-color: #575757;
         }
 
+        /* 햄버거 아이콘에 마우스를 올렸을 때 메뉴 표시 */
+        .menu-icon:hover + .vertical-menu,
+        .vertical-menu:hover {
+            display: block;
+        }
+
         /* 이미지 스타일 */
         .center-image {
-            width: calc(80vw - 200px); /* 화면의 80%에서 메뉴 바 너비를 제외한 크기 */
+            margin-right: 220px; /* 메뉴 바와 아이콘 너비만큼 오른쪽에 여백 추가 */
+            width: calc(80vw - 220px); /* 화면의 80%에서 메뉴 바 너비를 제외한 크기 */
             height: auto;
             object-fit: cover;
             z-index: 1;
         }
 
-        /* 페이드 효과를 위한 왼쪽 패널 */
+        /* 페이드 효과를 위한 오른쪽 패널 */
         .fade-panel {
             position: absolute;
             top: 0;
-            left: 200px; /* 메뉴 바 다음 위치에서 시작 */
+            right: 220px; /* 메뉴 바와 아이콘 너비만큼 왼쪽에 위치 */
             height: 100%; /* 화면 전체 높이 */
             width: 40%; /* 화면의 40%만큼 페이드 패널 차지 */
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             z-index: 2; /* 이미지 위에 오도록 설정 */
         }
 
@@ -73,12 +86,12 @@
         .intro-text {
             position: absolute;
             top: 50%;
-            left: calc(240px); /* 메뉴 바 너비(200px)와 추가 여백(40px)만큼 오른쪽으로 이동 */
+            right: calc(260px); /* 메뉴 바 너비(200px)와 추가 여백(60px)만큼 왼쪽으로 이동 */
             transform: translateY(-50%);
             color: white;
             z-index: 3; /* 페이드 패널 위에 오도록 설정 */
             font-size: 1.5em;
-            max-width: calc(40vw - 40px); /* 텍스트 영역의 너비를 페이드 패널 내로 제한 */
+            max-width: calc(40vw - 60px); /* 텍스트 영역의 너비를 페이드 패널 내로 제한 */
         }
     </style>
 	    
@@ -89,12 +102,17 @@
 	
 <body>
 
+    		<!-- 햄버거 아이콘 -->
+    		<div class="menu-icon">
+        		<i class="fas fa-bars"></i>
+    		</div>
+
     		<!-- 수직 메뉴 바 -->
     		<ul class="vertical-menu">
-        		<li><a href="#home">Home</a></li>
-        		<li><a href="#profile">Profile</a></li>
-        		<li><a href="#gallery">Gallery</a></li>
-        		<li><a href="#notice">Notice</a></li>
+       			<li><a href="#home">Home</a></li>
+        		<li><a href="#about">About</a></li>
+        		<li><a href="#services">Services</a></li>
+        		<li><a href="#contact">Contact</a></li>
     		</ul>
 
 		<!-- 가운데 배치된 이미지 -->
