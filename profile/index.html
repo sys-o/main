@@ -10,113 +10,14 @@
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
 	<title>Welcome to Sooyon's Webpage</title>
     <style>
-	#group1{
-	body {
-            margin: 0;
-	    height: 100%;
-            font-family: Lora, sans-serif;
-            background-color: #f0f0f0;
-            overflow-y: auto; /* 세로 스크롤을 가능하게 함 */
-        }
-
-        /* 컨테이너: 이미지와 텍스트를 담는 박스 */
-        .container {
-            display: flex;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        /* 수직 메뉴 바 스타일 */
-        .vertical-menu {
-            width: 15vw;
-            background-color: #333;
-            color: white;
-            list-style-type: none;
-            position: fixed;
-	    top: 0;
-            right: 0; /* 오른쪽에 메뉴 바 고정 */
-            height: 100%;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .vertical-menu a {
-            padding: 15px 30px; /* 상하 패딩을 20px으로 설정하여 간격 넓히기 */
-            text-decoration: none;
-            color: gray;
-	    font-size: 20px;
-            text-align: center;
-	    transition: color 0.3s ease;
-        }
-
-        .vertical-menu a:hover {
-            color: white;
-        }
-
-        /* 이미지와 텍스트를 포함하는 메인 컨텐츠 영역 */
-        .main-content {
-            width: 85vw; /* 화면 너비에서 메뉴 바 너비(200px)를 뺀 크기 */
-            position: relative;
-            overflow: hidden; /* 컨텐츠가 넘치지 않도록 숨김 */
-        }
-
-        /* 중앙 이미지 스타일 */
-        .center-image {
-            width: 100%;
-            min-height: 100vh; /* 최소 높이를 화면 높이에 맞춤 */
-            object-fit: cover; /* 이미지가 비율을 유지하면서 영역을 가득 채우도록 설정 */
-            position: relative;
-            z-index: 1;
-        }
-
-        /* 페이드 효과를 위한 왼쪽 패널 */
-        .fade-panel {
-            position: absolute;
-            left: 0;
-            height: 100%;
-            width: 60%; /* 화면의 35%만큼 페이드 패널 차지 */
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-            z-index: 2; /* 이미지 위에 오도록 설정 */
-        }
-
-        /* 소개글 스타일 */
-        .intro-text {
-            position: absolute;
-            left: 5%; /* 이미지 왼쪽에 위치 */
-            max-width: 40%; /* 소개글의 너비를 설정 */
-            color: white;
-            z-index: 3;
-            font-size: 1.4em;
-            top: 20%; /* 텍스트가 상단에서부터 얼마나 떨어져 있는지 설정 */
-        }
-	
-	h1, h2, h3, p, ul, li, a{
-            margin: 0;
-            padding: 0 0 60px 0; /* 각 요소에 하단 패딩 추가 */
-        }
-	
-	.centered {
-            text-align: center; /* 이 클래스가 적용된 텍스트만 가운데 정렬 */
-        }
-	}
-
-
-
-	    
-	#group2{
-
         body {
             display: flex;
-	    height: 100%;
             justify-content: center;
             margin: 0;
             padding: 20px; /* 상단 패딩 추가 */
-            font-family: Lora, sans-serif;
-            background-color: #333;
-	    overflow-y: auto;
-            /*box-sizing: border-box; /* 전체 높이와 너비에 패딩을 포함 */
+            font-family: 'Lora', sans-serif;;
+            background-color: #f0f0f0;
+            box-sizing: border-box; /* 전체 높이와 너비에 패딩을 포함 */
         }
 	
 	/*header {
@@ -141,14 +42,13 @@
 	}
 
         .container {
-            width: 100%; /* 화면 너비의 80%로 설정 */
+            padding-right: 15vw; /* 수직 메뉴 바의 너비만큼 오른쪽에 여백 추가 */
             max-width: 1200px; /* 최대 너비를 1200px로 설정 */
             padding: 20px;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 미묘한 그림자 */
             border-radius: 8px;
-            /*box-sizing: border-box;/* 패딩을 포함한 전체 크기 계산 */
-	    position: relative;
+            box-sizing: border-box; /* 패딩을 포함한 전체 크기 계산 */
         }
 
         h1, h2, h3, p, ul, li, a{
@@ -179,9 +79,43 @@
 	.centered a {
             margin: 0 20px; /* 각 아이콘의 좌우에 20px의 간격 추가 */
         }
-	    }
 
 
+	    
+	/* 수직 메뉴 바 스타일 */
+	.vertical-menu {
+    		width: 15vw;
+    		background-color: #333;
+    		color: white;
+    		list-style-type: none;
+		position: fixed;
+		top: 0;
+    		right: 0; /* 오른쪽에 메뉴 바 고정 */
+    		height: 100%;
+    		z-index: 1000;
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+	}
+
+	.vertical-menu a {
+    		padding: 15px 30px; /* 상하 패딩을 20px으로 설정하여 간격 넓히기 */
+    		text-decoration: none;
+    		color: gray;
+    		font-size: 20px;
+    		text-align: center;
+    		transition: color 0.3s ease;
+	}
+
+	.vertical-menu a:hover {
+    		color: white;
+	}
+
+	.centered {
+    		text-align: center; /* 이 클래스가 적용된 텍스트만 가운데 정렬 */
+	}
+
+	
 	    
     </style>
 </head>
@@ -189,7 +123,6 @@
 
 	
 <body>
-	<div id="group1">
 	<!-- 수직 메뉴 바 -->
     	<ul class="vertical-menu">
 		<div class="centered">
@@ -199,9 +132,6 @@
         	<li><a href="#contact">Contact</a></li>
 		</div>
     	</ul>
-	</div>
-	
-	<div id="group2">
 	<div class="container">
 		<header>
         		<h1 class="centered">Want to know about Sooyon Seo?</h1>
@@ -344,7 +274,6 @@
 				
 		</div>
 
-	</div>
 	</div>
 
 
