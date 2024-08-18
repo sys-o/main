@@ -9,7 +9,7 @@
     	<!-- Google Fonts CSS -->
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
 	<title>Easter egg!</title>
-    <style>
+<style>
         /* 전체 페이지 설정 */
         body {
             margin: 0;
@@ -18,82 +18,67 @@
             height: 100vh;
             overflow: hidden;
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* 햄버거 아이콘 스타일 */
-        .menu-icon {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
+        /* 중앙 이미지 스타일 */
+        .center-image {
+            width: 60%; /* 이미지가 화면의 60%를 차지하도록 설정 */
+            height: auto;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 소개글 스타일 */
+        .intro-text {
+            position: absolute;
+            left: 5%; /* 이미지 왼쪽에 위치 */
+            max-width: 30%; /* 소개글의 너비를 설정 */
             color: white;
-            cursor: pointer;
-            z-index: 1001;
+            z-index: 2;
+            font-size: 1.5em;
+        }
+
+        /* 페이드 효과를 위한 왼쪽 패널 */
+        .fade-panel {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 35%; /* 화면의 35%만큼 페이드 패널 차지 */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            z-index: 1; /* 이미지 위에 오도록 설정 */
         }
 
         /* 수직 메뉴 바 스타일 */
         .vertical-menu {
-            display: none; /* 초기에는 숨겨진 상태 */
             width: 200px;
             background-color: #333;
             color: white;
             list-style-type: none;
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 0;
+            right: 0; /* 오른쪽에 메뉴 바 고정 */
+            height: 100%;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .vertical-menu a {
             padding: 15px;
             text-decoration: none;
             color: white;
-            display: block;
-            text-align: left;
+            text-align: center;
         }
 
         .vertical-menu a:hover {
             background-color: #575757;
         }
 
-        /* 햄버거 아이콘에 마우스를 올렸을 때 메뉴 표시 */
-        .menu-icon:hover + .vertical-menu,
-        .vertical-menu:hover {
-            display: block;
-        }
-
-        /* 이미지 스타일 */
-        .center-image {
-            margin-right: 220px; /* 메뉴 바와 아이콘 너비만큼 오른쪽에 여백 추가 */
-            width: calc(100vw - 220px); /* 화면의 80%에서 메뉴 바 너비를 제외한 크기 */
-            height: auto;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        /* 페이드 효과를 위한 오른쪽 패널 */
-        .fade-panel {
-            position: absolute;
-            top: 0;
-            left: 100px; /* 메뉴 바와 아이콘 너비만큼 왼쪽에 위치 */
-            height: 100%; /* 화면 전체 높이 */
-            width: 40%; /* 화면의 40%만큼 페이드 패널 차지 */
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-            z-index: 2; /* 이미지 위에 오도록 설정 */
-        }
-
-        /* 소개글 스타일 */
-        .intro-text {
-            position: absolute;
-            top: 50%;
-            left: 100px; /* 메뉴 바 너비(200px)와 추가 여백(60px)만큼 왼쪽으로 이동 */
-            transform: translateY(-50%);
-            color: white;
-            z-index: 3; /* 페이드 패널 위에 오도록 설정 */
-            font-size: 1.5em;
-            max-width: calc(40vw - 60px); /* 텍스트 영역의 너비를 페이드 패널 내로 제한 */
-        }
-    </style>
+</style>
 	    
 
 </head>
@@ -101,19 +86,6 @@
 
 	
 <body>
-
-    		<!-- 햄버거 아이콘 -->
-    		<div class="menu-icon">
-        		<i class="fas fa-bars"></i>
-    		</div>
-
-    		<!-- 수직 메뉴 바 -->
-    		<ul class="vertical-menu">
-       			<li><a href="#home">Home</a></li>
-        		<li><a href="#about">About</a></li>
-        		<li><a href="#services">Services</a></li>
-        		<li><a href="#contact">Contact</a></li>
-    		</ul>
 
 		<!-- 가운데 배치된 이미지 -->
     		<img src="IMG_6957.JPG" alt="Centered Image" class="center-image">
@@ -127,6 +99,14 @@
         	<p>Hello, I am Sooyon Seo from South Korea. I am currently pursuing a Ph.D. degree in Immersive Media Engineering at Sungkyunkwan University(SKKU), Seoul, Republic of Korea, and is researching at SWLab led by Prof. Moohong Min.<br>
 				My research interests include generative artificial intelligence, cybersecurity, and illegal online gambling.</p>
     		</div>
+	
+	    	<!-- 수직 메뉴 바 -->
+    		<ul class="vertical-menu">
+        		<li><a href="#home">Home</a></li>
+        		<li><a href="#about">About</a></li>
+        		<li><a href="#services">Services</a></li>
+        		<li><a href="#contact">Contact</a></li>
+    		</ul>
 
 
 
