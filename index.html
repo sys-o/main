@@ -4,9 +4,270 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+	<!-- Font Awesome CSS -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    	<!-- Google Fonts CSS -->
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
+	<title>Easter egg!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 20px; /* 상단 패딩 추가 */
+            font-family: 'Lora', sans-serif;;
+            background-color: #f0f0f0;
+            box-sizing: border-box; /* 전체 높이와 너비에 패딩을 포함 */
+        }
+	
+	/*header {
+            position: fixed;
+	    top: 0;
+            left: 50%; /* 화면의 왼쪽에서 50% */
+	    transform: translateX(-50%); /* 자신을 왼쪽으로 50% 이동하여 정확히 중앙 정렬 */
+	    width: 85vw; 
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+	    border-radius: 8px
+            z-index: 1000; /* 다른 요소들보다 앞에 오도록 설정 */
+        }*/
+	
+
+        /* 페이지 내용이 헤더 아래에서 시작하도록 상단 여백 추가 */
+        .content {
+            margin-top: 60px; /* 헤더 높이만큼 여백 추가 */
+            padding: 20px;
+	}
+
+        .container {
+            width: 80vw; /* 화면 너비의 80%로 설정 */
+            max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 미묘한 그림자 */
+            border-radius: 8px;
+            box-sizing: border-box; /* 패딩을 포함한 전체 크기 계산 */
+        }
+
+        h1, h2, h3, p, ul, li, a{
+            margin: 0;
+            padding: 0 0 15px 0; /* 각 요소에 하단 패딩 추가 */
+        }
+
+        ul {
+            list-style-type: disc; /* 기본 리스트 스타일 설정 */
+            margin-left: 20px; /* 들여쓰기 설정 */
+            padding-left: 20px; /* 내부 패딩 추가 */
+        }
+
+        ul ul {
+            list-style-type: circle; /* 중첩된 리스트에 대해 다른 스타일 적용 */
+            margin-left: 20px; /* 추가 들여쓰기 */
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+	.centered {
+            text-align: center; /* 이 클래스가 적용된 텍스트만 가운데 정렬 */
+        }
+
+	.centered a {
+            margin: 0 20px; /* 각 아이콘의 좌우에 20px의 간격 추가 */
+        }
+
+
+
+	
+        /* 수평 메뉴를 위한 클래스 */
+        .horizontal-menu {
+            list-style-type: none; /* 기본 리스트 스타일 제거 */
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+            display: flex; /* 요소를 수평으로 배치 */
+        }
+
+        .horizontal-menu li {
+            float: left; /* 수평 정렬 */
+        }
+
+        .horizontal-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none; /* 밑줄 제거 */
+        }
+
+        .horizontal-menu li a:hover {
+            background-color: #111;
+        }
+	
+	    
+    </style>
 </head>
+
+
+	
 <body>
-  <p>Hello, World!</p>
+    <ul class="horizontal-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+	<div class="container">
+		<header>
+        		<h1 class="centered">Haha you find the easter egg!🤗</h1>
+			<!--<p class="centered">Location: Seoul, South Korea<br>-->
+			<div class="centered">
+				<a href="https://mail.google.com/mail/?view=cm&fs=1&to=sooyon1119@g.skku.edu&su=Subject&body=Your%20message" target="_blank">
+					<i class="fas fa-envelope" style="font-size:40px; color:#333;"></i>
+				</a>
+				<a href="https://www.instagram.com/ord_zhl_/" target="_blank">
+					<i class="fab fa-instagram" style="font-size:40px; color:#E4405F;"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/sooyon-seo/" target="_blank">
+					<i class="fab fa-linkedin" style="font-size:40px; color:#0077B5;"></i>
+				</a>
+			</div>
+		</header>
+		<div class="content">
+<hr>
+			<h2>Introduction</h2>
+				<img src="seos.jpg" width="72" height="96" alt="서수연 프로필" style="float: left; margin-right: 15px;">
+				<p> Hi, I am Sooyon Seo from South Korea.</p>
+				<p>I am currently pursuing a Ph.D. degree in Immersive Media Engineering at Sungkyunkwan University(SKKU), Seoul, Republic of Korea, and is researching at SWLab led by Prof. Moohong Min.<br>
+				My research interests include generative artificial intelligence, cybersecurity, and illegal online gambling.</p>
+				<div style="clear: both;"></div>
+
+
+			<h2>Education</h2>
+				<p><b>2023.08 ~ Present : Integrated M.S./Ph.D degree in Immersive Media Engineering</b> @SKKU </p>
+				<p><b>2020.03 ~ 2023.08 : B.S. degree in Global Business Administration</b> (Early Graduated as the Top Student in College) @SKKU</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022.08 : International Summer School @Southern Denmark University, Odense, Denmark</p>
+				<p><b>2017.03 ~ 2020.02 : High School Diploma in German Language</b> @Daewon Foreign Language High School, Seoul</p>
+			
+<hr>	
+			<h2>Conferences & Publications</h2>
+				<h3>A Study on the Frequency and Pattern Analysis of Spam Messages</h3>
+				<ul>
+					<p>Korea Computer Congress(KCC) 2024</p>
+					<li>June 2024 | Jeju, South Korea</li>
+					<li><b>Sooyon Seo</b>, Minseok Hur, Jaeho Hwang, Jiwon Jang, Jiho Shin, Moohong Min</li>
+				</ul>
+				
+				<h3>An Approach to Detect Illegal Online Gambling Using Generative AI</h3>
+				<ul>
+					<p>The 7th International Conference on Mobile Internet Security(MobiSec 2023)</p>
+					<li>Dec 2023 | Okinawa, Japan</li>
+					<li><b>Sooyon Seo</b>, Jaeho Hwang, Moohong Min</li>
+				</ul>
+				<h3>An Approach to Detect SMS Spam Using ChatGPT</h3>
+				<ul>
+					<p>The 18th Asia Pacific International Conference on Information Science and Technology(APIC-IST 2023)</p>
+					<li>June 2023 | Fukuoka, Japan</li>
+					<li><b>Sooyon Seo</b>, Jaeho Hwang, Moohong Min</li>
+				</ul>
+<hr>			
+			<h2>Experience</h2>
+				<h3>Researcher(Full-time) | SKKU, Seoul </h3>
+				<ul>
+					<p>Aug 2023 ~ Present</p>
+					<li>@<a href="https://swlab.skku.edu/sw/index.do">SWLab</a> led by Prof. Moohong Min</li>
+					<li>Main Research Fields: Generative AI, Cybersecurity, Illegal Online Gambling, Spam Detection</li>
+					<li>Research Assistant from July 2022 ~ Aug 2023</li>
+				</ul>
+				<h3>Teaching Assistant | SKKU, Seoul</h3>
+				<ul>
+					<p>Mar 2022 ~ Present</p>
+					<li>Currently assisting AI Basics & Application course</li>
+					<li>Assisted 'Computational Thinking & SW Coding' and 'Problem Solving & Algorithm' courses (Programming Language: Python)</li>
+					<li>Managing and organizing the course with the professor</li>
+					<li>Dealing with students' questions regarding Python and course assignments</li>
+				</ul>
+				<h3>Strategy Intern | ForSpaceLab Inc., Seoul</h3>
+				<ul>
+					<p>Dec 2022 ~ Feb 2023</p>
+					<li>@<a href= "https://www.forspacelab.com/">ForSpaceLab Inc.</a>, a business data analyzing start-up company</li>
+					<li>HR: managed crew evaluation & reward process and organized company culture & core values</li>
+					<li>supported other management needs such as legal contract review and arrangement of various documents</li>
+
+				</ul>
+				<h3>SKKU Weekly Newspaper Journalist | SKKU, Seoul </h3>
+				<ul>
+					<p>Sep 2020 ~ Feb 2022</p>
+					<li>Head of the Photo Department and a member of Sports Team</li>
+					<li><a href="https://www.skkuw.com/news/articleList.html?sc_area=I&sc_word=augenblick">Article portfolio</a>
+						and Seoul Shinmun articles <a href="https://www.seoul.co.kr/news/plan/now/2021/09/13/20210913015011">1)</a> & 
+						<a href="https://www.seoul.co.kr/news/plan/2022/01/17/20220117011018">2)</a> </li>
+		
+				</ul>
+				<h3>Samsung Dream Class Tutor | Samsung Foundation, Seoul</h3>
+				<ul>
+					<p>Sep 2021 ~ Feb 2022</p>
+					<li>Volunteered to teach middle school students in need and guided them to set their career direction </li>
+					<li>Experienced online education program utilizing various teaching materials</li>
+				</ul>
+<hr>	
+			<h2>Awards & Certificates</h2>
+				<ul>
+					<li><b>Best Excellence Award</b></li>
+						<ul>
+							<li>Case Competition - Generative AI Chatbot in Security</li>
+							<li>Issued by Korea Internet & Security Agency</li>
+						</ul>
+					<li><b>Dean's Award for Academic Excellence/ First Class Honors</b></li>
+						<ul>
+							<li>Awarded for being a model for others with the best academic performance while enrolled in the undergraduate course</li>
+							<li>Issued by SKK Business School</li>
+						</ul>
+					<li><b>Summa Cum Laude</b></li>
+							<ul>
+						<li>The highest academic award designated for students in 5% of the class 2023</li>
+							<li>Issued by SKK Business School</li>
+						</ul>
+					<li><b>Dean's List</b></li>
+						<ul>
+							<li>Fall & Spring 2022, Fall 2021, Fall & Spring 2020</li>
+							<li>Recognition of Honorable Academic Achievement</li>
+							<li>Issued by SKK Business School</li>
+						</ul>
+					<li><b>The Next Century Humanities Scholarship</b></li>
+						<ul>
+							<li>Full Scholarship for 2 years(4 semesters)</li>
+							<li>National scholarship for undergraduates in humanities and social sciences who have demonstrated their potentials to be the leaders in those fields</li>
+							<li>Issued by Ministry of Education</li>
+						</ul>
+					<li><b>SKKU Academic Excellence Scholarship</b></li>
+						<ul>
+							<li>Received full scholarship for Fall 2020 & Spring 2021</li>
+							<li>For being one of the Top 3 GBA students who achieved academic excellence</li>
+							<li>Issued by SKK Business School</li>
+						</ul>
+					<li><b>German Reciting Contest</b></li>
+						<ul>
+							<li>8 Finalist</li>
+							<li>Issued by Goethe Institute</li>
+						</ul>
+					<li><b>Zertifikat Deutsch(Goethe-German Certificate): B1</b></li>
+		
+				</ul>
+<hr>	
+			<h3>Hmm... any easter-egg idea?</h3>
+				
+		</div>
+
+	</div>
+
+
+
 </body>
+
 </html>
