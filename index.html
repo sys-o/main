@@ -13,13 +13,13 @@
         body {
             display: flex;
             justify-content: center;
-	    align-items: center;
-	    height: 100vh; /* 화면의 높이를 100%로 설정 */
+            align-items: center;
+            height: 100vh; /* 화면의 높이를 100%로 설정 */
             margin: 0;
-            padding: 20px; /* 상단 패딩 추가 */
-            font-family: 'Lora', sans-serif;;
+            font-family: Lora, sans-serif;
             background-color: #f0f0f0;
             position: relative;
+            overflow: hidden; /* 넘치는 콘텐츠 숨김 */
         }
 	
 	/*header {
@@ -96,7 +96,7 @@
         }
 
         .horizontal-menu li {
-            float: left; /* 수평 정렬 */
+            float: right; /* 수평 정렬 */
         }
 
         .horizontal-menu li a {
@@ -111,33 +111,34 @@
             background-color: #111;
         }
 
-
-	        /* 이미지 스타일 */
+        /* 이미지 스타일 */
         .center-image {
-            position: relative;
-            max-width: 50%; /* 이미지를 화면의 50% 크기로 설정 */
+            width: 80vw; /* 이미지를 화면의 80% 크기로 설정 */
             height: auto;
-            z-index: 1; /* 이미지가 판 위에 오도록 설정 */
+            object-fit: cover;
         }
 
-        /* 반투명 판 스타일 */
-        .intro-panel {
+        /* 페이드 효과를 위한 왼쪽 패널 */
+        .fade-panel {
             position: absolute;
-            top: 50%;
-            left: 10%; /* 화면 왼쪽에서 10% 떨어진 위치 */
-            transform: translateY(-50%); /* 세로로 가운데 정렬 */
-            width: 30%; /* 판의 너비를 설정 */
-            background-color: rgba(0, 0, 0, 0.6); /* 반투명 배경 색상 */
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 2; /* 이미지 아래에 위치하도록 설정 */
+            top: 0;
+            left: 0;
+            height: 100%; /* 화면 전체 높이 */
+            width: 40%; /* 화면의 40%만큼 페이드 패널 차지 */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            z-index: 2; /* 이미지 위에 오도록 설정 */
         }
 
         /* 소개글 스타일 */
         .intro-text {
-            margin: 0;
-            font-size: 1.2em;
+            position: absolute;
+            top: 50%;
+            left: 5%; /* 페이드 패널의 안쪽에 위치 */
+            transform: translateY(-50%);
+            color: white;
+            z-index: 3; /* 페이드 패널 위에 오도록 설정 */
+            font-size: 1.5em;
+            max-width: 35%; /* 텍스트 영역을 화면의 35%로 제한 */
         }
 	    
     </style>
@@ -147,26 +148,26 @@
 	
 <body>
 	<div class="container">
-	<ul class="horizontal-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#notice">Notice</a></li>
-        </ul>
-		<header>
-        		<h1 class="centered">Hi, want to know about Sooyon Seo?</h1>
-				    <!-- 가운데 배치된 이미지 -->
-    				    <img src="IMG_6957.JPG" alt="Centered Image" class="center-image">
+		<ul class="horizontal-menu">
+     			<li><a href="#home">Home</a></li>
+ 	       		<li><a href="#profile">Profile</a></li>
+        		<li><a href="#gallery">Gallery</a></li>
+        		<li><a href="#notice">Notice</a></li>
+        	</ul>
+		<h1 class="centered">Welcom to Sooyon's Web Page</h1>
 
-    				    <!-- 반투명 판 위의 소개글 -->
-    				    <div class="intro-panel">
-        			    <p class="intro-text"> Hello, I am Sooyon Seo from South Korea. I am currently pursuing a Ph.D. degree in Immersive Media Engineering at Sungkyunkwan University(SKKU), Seoul, Republic of Korea, and is researching at SWLab led by Prof. Moohong Min.<br>
+		<!-- 가운데 배치된 이미지 -->
+    		<img src="IMG_6957.JPG" alt="Centered Image" class="center-image">
+
+     		<!-- 페이드 효과 패널 -->
+   		<div class="fade-panel"></div>
+
+    		<!-- 소개글 -->
+    		<div class="intro-text">
+        	<p>Hello, I am Sooyon Seo from South Korea. I am currently pursuing a Ph.D. degree in Immersive Media Engineering at Sungkyunkwan University(SKKU), Seoul, Republic of Korea, and is researching at SWLab led by Prof. Moohong Min.<br>
 				My research interests include generative artificial intelligence, cybersecurity, and illegal online gambling.</p>
-         		  	    </div>
+    		</div>
 
-
-
-		</header>
 
 	</div>
 
