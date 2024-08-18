@@ -10,81 +10,16 @@
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
 	<title>Easter egg!</title>
     <style>
+        /* 전체 페이지 설정 */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* 화면의 높이를 100%로 설정 */
             margin: 0;
-            font-family: Lora, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            position: relative;
-            overflow: hidden; /* 넘치는 콘텐츠 숨김 */
-        }
-	
-	/*header {
-            position: fixed;
-	    top: 0;
-            left: 50%; /* 화면의 왼쪽에서 50% */
-	    transform: translateX(-50%); /* 자신을 왼쪽으로 50% 이동하여 정확히 중앙 정렬 */
-	    width: 85vw; 
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-	    border-radius: 8px
-            z-index: 1000; /* 다른 요소들보다 앞에 오도록 설정 */
-        }*/
-	
-
-        /* 페이지 내용이 헤더 아래에서 시작하도록 상단 여백 추가 */
-        .content {
-            margin-top: 60px; /* 헤더 높이만큼 여백 추가 */
-            padding: 20px;
-	}
-
-        .container {
-            width: 80vw; /* 화면 너비의 80%로 설정 */
-            max-width: 1200px; /* 최대 너비를 1200px로 설정 */
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 미묘한 그림자 */
-            border-radius: 8px;
-            box-sizing: border-box; /* 패딩을 포함한 전체 크기 계산 */
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
         }
 
-        h1, h2, h3, p, ul, li, a{
-            margin: 0;
-            padding: 0 0 15px 0; /* 각 요소에 하단 패딩 추가 */
-        }
-
-        ul {
-            list-style-type: disc; /* 기본 리스트 스타일 설정 */
-            margin-left: 20px; /* 들여쓰기 설정 */
-            padding-left: 20px; /* 내부 패딩 추가 */
-        }
-
-        ul ul {
-            list-style-type: circle; /* 중첩된 리스트에 대해 다른 스타일 적용 */
-            margin-left: 20px; /* 추가 들여쓰기 */
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
-        }
-	.centered {
-            text-align: center; /* 이 클래스가 적용된 텍스트만 가운데 정렬 */
-        }
-
-	.centered a {
-            margin: 0 20px; /* 각 아이콘의 좌우에 20px의 간격 추가 */
-        }
-
-
-
-	
         /* 수직 메뉴 바 스타일 */
         .vertical-menu {
             width: 200px;
@@ -100,6 +35,7 @@
             top: 0;
             left: 0;
             height: 100%;
+            z-index: 1000;
         }
 
         .vertical-menu a {
@@ -116,18 +52,20 @@
 
         /* 이미지 스타일 */
         .center-image {
-            width: 80vw; /* 이미지를 화면의 80% 크기로 설정 */
+            margin-left: 200px; /* 메뉴 바 너비만큼 왼쪽에 여백 추가 */
+            width: calc(80vw - 200px); /* 화면의 80%에서 메뉴 바 너비를 제외한 크기 */
             height: auto;
             object-fit: cover;
+            z-index: 1;
         }
 
         /* 페이드 효과를 위한 왼쪽 패널 */
         .fade-panel {
             position: absolute;
             top: 0;
-            left: 0;
+            left: 200px; /* 메뉴 바 다음 위치에서 시작 */
             height: 100%; /* 화면 전체 높이 */
-            width: 60%; /* 화면의 40%만큼 페이드 패널 차지 */
+            width: 40%; /* 화면의 40%만큼 페이드 패널 차지 */
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             z-index: 2; /* 이미지 위에 오도록 설정 */
         }
@@ -136,15 +74,16 @@
         .intro-text {
             position: absolute;
             top: 50%;
-            left: 5%; /* 페이드 패널의 안쪽에 위치 */
+            left: calc(240px); /* 메뉴 바 너비(200px)와 추가 여백(40px)만큼 오른쪽으로 이동 */
             transform: translateY(-50%);
             color: white;
             z-index: 3; /* 페이드 패널 위에 오도록 설정 */
             font-size: 1.5em;
-            max-width: 35%; /* 텍스트 영역을 화면의 35%로 제한 */
+            max-width: calc(40vw - 40px); /* 텍스트 영역의 너비를 페이드 패널 내로 제한 */
         }
-	    
     </style>
+	    
+
 </head>
 
 
