@@ -10,6 +10,11 @@
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
 	<title>Welcome to Sooyon's Webpage</title>
     <style>
+	html, body {
+    		margin: 0;
+    		padding: 0;
+    		height: 100%;
+	}
         body {
             display: flex;
 	    height: 100%;
@@ -43,7 +48,7 @@
 	}
 
         .container {
-            width: 80vw; /* 화면 너비의 80%로 설정 */
+            width: calc(80vw-15vw); /* 화면 너비의 80%로 설정 */
             max-width: 1200px; /* 최대 너비를 1200px로 설정 */
             padding: 20px;
             background-color: #ffffff;
@@ -91,6 +96,7 @@
             color: white;
             list-style-type: none;
             position: fixed;
+	    top: 0;
             right: 0; /* 오른쪽에 메뉴 바 고정 */
             height: 100%;
             z-index: 1000;
