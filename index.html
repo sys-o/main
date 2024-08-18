@@ -15,9 +15,14 @@
             margin: 0;
             font-family: Lora, sans-serif;
             background-color: #f0f0f0;
-            height: 100vh;
-            overflow: hidden;
+            overflow-y: auto; /* 세로 스크롤을 가능하게 함 */
+        }
+
+        /* 컨테이너: 이미지와 텍스트를 담는 박스 */
+        .container {
             display: flex;
+            min-height: 100vh;
+            position: relative;
         }
 
         /* 수직 메뉴 바 스타일 */
@@ -47,10 +52,17 @@
             background-color: #575757;
         }
 
+        /* 이미지와 텍스트를 포함하는 메인 컨텐츠 영역 */
+        .main-content {
+            width: calc(100vw - 200px); /* 화면 너비에서 메뉴 바 너비(200px)를 뺀 크기 */
+            position: relative;
+            overflow: hidden; /* 컨텐츠가 넘치지 않도록 숨김 */
+        }
+
         /* 중앙 이미지 스타일 */
         .center-image {
-            width: calc(100vw - 200px); /* 화면 너비에서 메뉴 바 너비(200px)를 뺀 크기 */
-            height: 100vh; /* 화면의 높이에 꽉 차게 설정 */
+            width: 100%;
+            min-height: 100vh; /* 최소 높이를 화면 높이에 맞춤 */
             object-fit: cover; /* 이미지가 비율을 유지하면서 영역을 가득 채우도록 설정 */
             position: relative;
             z-index: 1;
@@ -61,7 +73,7 @@
             position: absolute;
             left: 0;
             height: 100%;
-            width: 55%; /* 화면의 35%만큼 페이드 패널 차지 */
+            width: 35%; /* 화면의 35%만큼 페이드 패널 차지 */
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             z-index: 2; /* 이미지 위에 오도록 설정 */
         }
@@ -74,6 +86,7 @@
             color: white;
             z-index: 3;
             font-size: 1.5em;
+            top: 20%; /* 텍스트가 상단에서부터 얼마나 떨어져 있는지 설정 */
         }
 
 </style>
@@ -84,27 +97,31 @@
 
 	
 <body>
+    <!-- 수직 메뉴 바 -->
+    <ul class="vertical-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-		<!-- 가운데 배치된 이미지 -->
-    		<img src="IMG_6957.JPG" alt="Centered Image" class="center-image">
+    <!-- 메인 컨텐츠 영역 -->
+    <div class="main-content">
+        <div class="container">
+            <!-- 페이드 효과 패널 -->
+            <div class="fade-panel"></div>
 
-     		<!-- 페이드 효과 패널 -->
-   		<div class="fade-panel"></div>
-
-    		<!-- 소개글 -->
+            <!-- 소개글 -->
     		<div class="intro-text">
 		<h1>Welcome to Seo's Web Page</h1>
         	<p>Hello, I am Sooyon Seo from South Korea. I am currently pursuing a Ph.D. degree in Immersive Media Engineering at Sungkyunkwan University(SKKU), Seoul, Republic of Korea, and is researching at SWLab led by Prof. Moohong Min.<br>
 				My research interests include generative artificial intelligence, cybersecurity, and illegal online gambling.</p>
     		</div>
-	
-	    	<!-- 수직 메뉴 바 -->
-    		<ul class="vertical-menu">
-        		<li><a href="#home">Home</a></li>
-        		<li><a href="#about">About</a></li>
-        		<li><a href="#services">Services</a></li>
-        		<li><a href="#contact">Contact</a></li>
-    		</ul>
+
+            <!-- 메뉴 바를 제외한 나머지 공간에 꽉 차는 이미지 -->
+            <img src="IMG_6957.JPG" alt="Centered Image" class="center-image">
+        </div>
+    </div>
 
 
 
