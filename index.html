@@ -16,7 +16,6 @@
 	    height: 100%;
             font-family: Lora, sans-serif;
             background-color: #f0f0f0;
-            overflow-y: auto; /* 세로 스크롤을 가능하게 함 */
         }
 
         /* 컨테이너: 이미지와 텍스트를 담는 박스 */
@@ -58,7 +57,7 @@
         .main-content {
             width: 85vw; /* 화면 너비에서 메뉴 바 너비(200px)를 뺀 크기 */
             position: relative;
-            overflow: hidden; /* 컨텐츠가 넘치지 않도록 숨김 */
+	    overflow-y: auto; /* 세로 스크롤을 가능하게 함 */
         }
 
         /* 중앙 이미지 스타일 */
