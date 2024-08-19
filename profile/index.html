@@ -33,9 +33,13 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         .vertical-menu a {
+            width: 100%;
+            
             text-decoration: none;
             color: gray;
             font-size: 20px;
@@ -48,11 +52,12 @@
 
         /* 메인 컨텐츠 스타일 */
         .main-content {
+            margin-left: auto;
             margin-right: 15vw; /* 메뉴 바 너비만큼 왼쪽 여백 추가 */
             display: flex;
             justify-content: center; /* 수평 중앙 정렬 */
             align-items: center; /* 수직 중앙 정렬 */
-            width: 85vw;
+            width: calc(100% - 15vw);
             box-sizing: border-box;
             min-height: 100vh; /* 남은 공간 전체를 사용 */
         }
@@ -61,7 +66,7 @@
             width: 100%;
             max-width: 70vw;
             padding: 20px 50px;
-            margin: 20px 0;
+            margin: 20px auto;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
