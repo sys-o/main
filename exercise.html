@@ -57,7 +57,6 @@
         /* 이미지와 텍스트를 포함하는 메인 컨텐츠 영역 */
         .main-content {
             width: 85vw; /* 화면 너비에서 메뉴 바 너비(200px)를 뺀 크기 */
-	    padding: 10vw 10vw
             position: relative;
             overflow: hidden; /* 컨텐츠가 넘치지 않도록 숨김 */
         }
@@ -92,10 +91,10 @@
             top: 20%; /* 텍스트가 상단에서부터 얼마나 떨어져 있는지 설정 */
         }
 	
-	h1, h2, h3, p, ul, li, a{
+	/*h1, h2, h3, p, ul, li, a{
             margin: 0;
             padding: 0 0 60px 0; /* 각 요소에 하단 패딩 추가 */
-        }
+        }*/
 	
 	.centered {
             text-align: center; /* 이 클래스가 적용된 텍스트만 가운데 정렬 */
@@ -111,7 +110,7 @@
 	
 <body>
     <!-- 수직 메뉴 바 -->
-    <ul class="vertical-menu">
+    <ul class="vertical-menu" style= "padding: 0 0 60px 0;">
 	<div class="centered">
         <li><a href="/main/">Home</a></li>
         <li><a href="/main/profile/">About</a></li>
@@ -123,7 +122,6 @@
     <!-- 메인 컨텐츠 영역 -->
     <div class="main-content">
         <div class="container">
-          <p>hi</p>
 
 		<header>
         		<h1 class="centered">Want to know about Sooyon Seo?</h1>
